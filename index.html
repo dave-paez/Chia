@@ -5,171 +5,211 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Chía</title>
     <link rel="icon" href="img/icono.jpg">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
   </head>
+
   <body>
-    <header class="p-3 text-bg-dark">
-        <div class="container">
-          <div
-            class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
-          >
-          <img class="logo" src="img/logo.jpg" alt="logo" width="80px">
-            <a
-              href="/"
-              class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
-            >
-            </a>
-            <ul
-              class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
-            >
+
+    <!-- HEADER -->
+    <header class="p-3">
+      <div class="container">
+        <div class="d-flex align-items-center justify-content-between">
+
+          <img class="logo" src="img/logo.jpg" alt="logo" width="70" style="border-radius:40px;">
+
+          <button class="navbar-toggler d-lg-none bg-light px-2 py-1" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#mobileMenu">
+            ☰
+          </button>
+
+          <nav class="collapse d-lg-flex justify-content-end w-100 w-lg-auto mt-3 mt-lg-0" id="mobileMenu">
+            <ul class="nav ms-lg-4 flex-column flex-lg-row text-center">
               <li><a href="index.html" class="nav-link px-2 text-secondary">INICIO</a></li>
               <li><a href="empresa.html" class="nav-link px-2 text-white">EMPRESA</a></li>
               <li><a href="preguntas-frecuentes-chia.html" class="nav-link px-2 text-white">PREGUNTAS FRECUENTES</a></li>
               <li><a href="productos.html" class="nav-link px-2 text-white">PRODUCTOS</a></li>
               <li><a href="contacto.html" class="nav-link px-2 text-white">CONTÁCTANOS</a></li>
+              
             </ul>
-          </div>
+          </nav>
+          
         </div>
+      </div>
     </header>
-    <br>
+
     <main>
-        <section>
-<div id="carouselExampleDark" class="carousel carousel-dark slide">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active" data-bs-interval="10000">
-      <img src="img/heroe.png" class="d-block w-100" alt="heroe">
-      <div class="carousel-caption d-none d-md-block">
-      </div>
-    </div>
-    <div class="carousel-item" data-bs-interval="2000">
-      <img src="img/heroe2.png" class="d-block w-100" alt="heroe">
-      <div class="carousel-caption d-none d-md-block">
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="img/heroe3.png" class="d-block w-100" alt="heroe">
-      <div class="carousel-caption d-none d-md-block">
-      </div>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-<br>
-        <section>
-          <div class="container">
-            <h2>Productos</h2>
-            <div class="row-2">
-              <div class="col">
-<div class="card" style="width: 18rem;">
-  <img src="img/frutas.png" class="card-img-top" alt="frutas">
-  <div class="card-body">
-    <p class="card-text">🍎 ¡Frescura Natural al Mejor Precio! 🍌 <br>
-    Disfruta de una explosión de sabor y vitaminas con nuestras frutas 100% frescas.</p>
-  </div>
-</div>
-<br>
-<div class="card" style="width: 18rem;">
-  <img src="img/proteinas.png" class="card-img-top" alt="proteinas">
-  <div class="card-body">
-    <p class="card-text">🥩 ¡Energía y sabor en cada bocado! 🐟 <br>  
-    Descubre nuestras proteínas frescas y de la mejor calidad, ideales para fortalecer tu cuerpo y mantener una dieta balanceada.</p>
-  </div>
-</div>
-<br>
-<div class="card" style="width: 18rem;">
-  <img src="img/frutos secos.png" class="card-img-top" alt="frutos secos">
-  <div class="card-body">
-    <p class="card-text">🌰 ¡Energía que alimenta tu día! <br>
-    Disfruta de la mezcla perfecta de sabor, textura y nutrición con nuestros frutos secos 100% naturales: nueces, almendras, maní, avellanas y más.</p>
-  </div>
-</div>    
-        </section>
-        </section>
-        <br>
-        <section>
-          <div class="container">
-            <h2>Historia</h2>
-            <div class="row">
-              <div class="col-5">
-                <h4>La empresa nace como un emprendimiento en pareja, impulsado por el deseo de ofrecer productos de calidad y un servicio cercano. Nuestro objetivo es atender un mercado en constante crecimiento, que en el municipio de Copacabana aún cuenta con pocos oferentes. Vimos en esta necesidad una oportunidad para aportar soluciones innovadoras, accesibles y confiables, construyendo así un proyecto que combina nuestro compromiso, pasión y visión de futuro.</h4>
-              </div>
-              <div class="col-7">
-                <img src="img/logo-historia.png" alt="historia" width="520">
-              </div>
+
+      <!-- CARRUSEL -->
+      <section class="mt-3">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide carousel-fade" 
+     data-bs-ride="carousel" data-bs-interval="3000">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"></button>
+          </div>
+
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="img/heroe.png" class="d-block w-100 img-fluid" alt="heroe">
+            </div>
+
+            <div class="carousel-item">
+              <img src="img/heroe2.png" class="d-block w-100 img-fluid" alt="heroe">
+            </div>
+
+            <div class="carousel-item">
+              <img src="img/heroe3.png" class="d-block w-100 img-fluid" alt="heroe">
             </div>
           </div>
-        </section>
-        <br>
-        <section>
-          <div class="container">
-            <h2>Como llegar</h2>
-            <div class="row">
-              <div class="col-8">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.341496221559!2d-75.51052322458484!3d6.3498121938848255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e44256bc9879a7f%3A0xc49ef08735524006!2sCra.%2051%20%23%2050A-68%2C%20Copacabana%2C%20Antioquia!5e0!3m2!1ses!2sco!4v1762886555401!5m2!1ses!2sco" width="600" height="450" style="border:solid;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-              </div>
-              <div class="col-4">
-                <div class="card" style="width: 18rem;">
-                  <img src="img/logo.jpg" class="card-img-top" alt="logo-mapa">
-                  <div class="card-body">
-                    <p class="card-text">Te esperamos en: <br>
-                      Carrera 51 número 50a-68 Copacabana – Chía. <br>
-                      Ven y descubre un espacio donde la alimentación saludable, la sostenibilidad y el bienestar se encuentran en cada detalle.💚<br></p>
-                  </div>
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </section>
+
+
+      <!-- PRODUCTOS -->
+      <section class="mt-4">
+        <div class="container">
+          <h2 class="mb-3">Productos</h2>
+
+          <div class="row gy-4">
+
+            <div class="col-12 col-md-4">
+              <div class="card w-100">
+                <img src="img/frutas.png" class="card-img-top" alt="frutas">
+                <div class="card-body">
+                  <p class="card-text">🍎 ¡Frescura Natural al Mejor Precio! 🍌<br>
+                  Disfruta de una explosión de sabor y vitaminas con nuestras frutas 100% frescas.</p>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-        <br>
-    </main>
-    
-    <footer class="footer">
-  <div class="footer-container">
-    <div class="footer-logo-desc">
-      <img src="img/logo.jpg" alt="Chia Mercado Saludable" class="footer-logo" />
-      <p class="footer-description">
-        Productos orgánicos y naturales para cuidar de ti y del planeta.
-      </p>
-    </div>
-    <nav class="footer-nav">
-      <h4>Navegación</h4>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="empresa.html">Empresa</a></li>
-        <li><a href="productos.html">Productos</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-    <div class="footer-contact">
-      <h4>Contáctanos</h4>
-      <p>Email: </p>
-      <p>Teléfono: +57 312 2475108</p>
-      <p>Redes: </p>
-      <div class="footer-socials">
-        <a class="links" href="https://www.instagram.com/chiamercadosaludables/" target="_blank"><img src="img/instagram.png" alt="Instagram" /></a>
-        <a class="links" href="#"><img src="img/facebook.png" alt="Facebook" /></a>
-        <a class="links" href="#"><img src="img/whatsapp.png" alt="WhatsApp" /></a>
-      </div>
-    </div>
-  </div>
-  <div class="footer-legal">
-    &copy; 2025 Chia Mercado Saludable. Todos los derechos reservados.
-  </div>
-</footer>
 
+            <div class="col-12 col-md-4">
+              <div class="card w-100">
+                <img src="img/proteinas.png" class="card-img-top" alt="proteinas">
+                <div class="card-body">
+                  <p class="card-text">🥩 ¡Energía y sabor en cada bocado! 🐟<br>
+                  Proteínas frescas y de calidad para una dieta balanceada.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+              <div class="card w-100">
+                <img src="img/frutos secos.png" class="card-img-top" alt="frutos secos">
+                <div class="card-body">
+                  <p class="card-text">🌰 ¡Energía que alimenta tu día!<br>
+                  Frutos secos 100% naturales: nueces, almendras, maní, avellanas y más.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+      <!-- HISTORIA -->
+      <section class="mt-5">
+        <div class="container">
+          <h2>Historia</h2>
+          <div class="row align-items-center mt-3">
+
+            <div class="col-12 col-md-5">
+              <h4>
+                En chía trabajamos cada día para ofrecer una alimentación orgánica y saludable, garantizando la máxima calidad en nuestros productos y un servicio al cliente excepcional; promoviendo el respeto por nuestros colaboradores, el compromiso con el medio ambiente y una colaboración transparente y responsable con nuestros proveedores contribuyendo así al bienestar integral de nuestra comunidad.
+              </h4>
+            </div>
+
+            <div class="col-12 col-md-7 text-center">
+              <img src="img/logo-historia.png" class="img-fluid mt-3 mt-md-0" alt="historia">
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+      <!-- MAPA -->
+      <section class="mt-5">
+        <div class="container">
+          <h2>Cómo llegar</h2>
+          <div class="row mt-3">
+
+            <div class="col-12 col-md-8">
+              <iframe class="w-100" height="350" style="border:solid;" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.341496221559!2d-75.51052322458484!3d6.3498121938848255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e44256bc9879a7f%3A0xc49ef08735524006!2sCra.%2051%20%23%2050A-68%2C%20Copacabana%2C%20Antioquia!5e0!3m2!1ses!2sco!4v1762886555401!5m2!1ses!2sco" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <div class="col-12 col-md-4 mt-4 mt-md-0">
+              <div class="card w-100">
+                <img src="img/logo.jpg" class="card-img-top" alt="logo-mapa">
+                <div class="card-body">
+                  <p class="card-text">
+                    Te esperamos en:<br>
+                    Carrera 51 número 50a-68 Copacabana – Chía.<br>
+                    Alimentación saludable, sostenibilidad y bienestar. 💚
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer mt-5 text-white pt-4 pb-2">
+      <div class="container">
+        <div class="row gy-4 align-items-center text-center text-md-start">
+
+          <div class="col-12 col-md-4">
+            <img class="logo" src="img/logo.jpg" alt="logo" width="70" style="border-radius:40px;">
+            <p>Productos orgánicos y naturales para cuidar de ti y del planeta.</p>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <h4>Navegación</h4>
+            <ul class="list-unstyled">
+              <li><a href="index.html" class="text-white-2">Inicio</a></li>
+              <li><a href="empresa.html" class="text-white-2">Empresa</a></li>
+              <li><a href="productos.html" class="text-white-2">Productos</a></li>
+              <li><a href="contacto.html" class="text-white-2">Contacto</a></li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <h4>Contáctanos</h4>
+            <p>Teléfono: +57 323 9394833</p>
+            <div>
+              <a href="https://www.instagram.com/chiamercadosaludables/" target="_blank"><img src="img/instagram.png" width="30"></a>
+              <a href="#"><img src="img/facebook.png" width="30"></a>
+              <a href="https://wa.link/wmfbgl" target="_blank"><img src="img/whatsapp.png" width="30"></a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="text-center mt-4">
+          &copy; 2025 Chia Mercado Saludable. Todos los derechos reservados.
+        </div>
+      </div>
+    </footer>
+
+    <button id="btn-up"><img src="img/flecha_arriba.png" alt="flecha" width="50"></button>
+
+    <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   </body>
 </html>

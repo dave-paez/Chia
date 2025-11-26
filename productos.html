@@ -5,122 +5,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Chía</title>
     <link rel="icon" href="img/icono.jpg">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
   </head>
+
   <body>
-    <header class="p-3 text-bg-dark">
-        <div class="container">
-          <div
-            class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
-          >
-          <img class="logo" src="img/logo.jpg" alt="logo" width="80px">
-            <a
-              href="/"
-              class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
-            >
-            </a>
-            <ul
-              class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
-            >
+
+    <!-- HEADER -->
+    <header class="p-3">
+      <div class="container">
+        <div class="d-flex align-items-center justify-content-between">
+
+          <img class="logo" src="img/logo.jpg" alt="logo" width="70" style="border-radius:40px;">
+
+          <button class="navbar-toggler d-lg-none bg-light px-2 py-1" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#mobileMenu">
+            ☰
+          </button>
+
+          <nav class="collapse d-lg-flex justify-content-end w-100 w-lg-auto mt-3 mt-lg-0" id="mobileMenu">
+            <ul class="nav ms-lg-4 flex-column flex-lg-row text-center">
               <li><a href="index.html" class="nav-link px-2 text-secondary">INICIO</a></li>
               <li><a href="empresa.html" class="nav-link px-2 text-white">EMPRESA</a></li>
               <li><a href="preguntas-frecuentes-chia.html" class="nav-link px-2 text-white">PREGUNTAS FRECUENTES</a></li>
               <li><a href="productos.html" class="nav-link px-2 text-white">PRODUCTOS</a></li>
               <li><a href="contacto.html" class="nav-link px-2 text-white">CONTÁCTANOS</a></li>
             </ul>
-          </div>
+          </nav>
+
         </div>
+      </div>
     </header>
-    <br>
-    <main>
-        <section>
-           <div class="container">
-            <h2>Productos</h2>
-            <div class="row-2">
-              <div class="col">
-<div class="card" style="width: 18rem;">
-  <img src="img/frutas.png" class="card-img-top" alt="frutas">
-  <div class="card-body">
-    <p class="card-text">🍎 ¡Frescura Natural al Mejor Precio! 🍌 <br>
-    Disfruta de una explosión de sabor y vitaminas con nuestras frutas 100% frescas.</p>
-  </div>
-</div>
-<br>
-<div class="card" style="width: 18rem;">
-  <img src="img/verduras.png" class="card-img-top" alt="verduras">
-  <div class="card-body">
-    <p class="card-text">🥦 ¡Verde que te quiero verde! 🥕 <br>
-    Llévate la frescura del campo directo a tu mesa con nuestras verduras 100% naturales y recién cosechadas.</p>
-  </div>
-</div>
-<br>
-<div class="card" style="width: 18rem;">
-  <img src="img/proteinas.png" class="card-img-top" alt="proteinas">
-  <div class="card-body">
-    <p class="card-text">🥩 ¡Energía y sabor en cada bocado! 🐟 <br>  
-    Descubre nuestras proteínas frescas y de la mejor calidad, ideales para fortalecer tu cuerpo y mantener una dieta balanceada.</p>
-  </div>
-</div>
-              </div>
-              <div class="col">
-<div class="card" style="width: 18rem;">
-  <img src="img/granos.png" class="card-img-top" alt="granos">
-  <div class="card-body">
-    <p class="card-text">🌾 ¡Nutrición que se siente! 🌽 <br>
-    Disfruta de la mejor selección de granos naturales, llenos de sabor y energía para tus comidas diarias.</p>
-  </div>
-</div>
-<br>
-<div class="card" style="width: 18rem;">
-  <img src="img/frutos secos.png" class="card-img-top" alt="frutos secos">
-  <div class="card-body">
-    <p class="card-text">🌰 ¡Energía que alimenta tu día! <br>
-    Disfruta de la mezcla perfecta de sabor, textura y nutrición con nuestros frutos secos 100% naturales: nueces, almendras, maní, avellanas y más.</p>
-  </div>
-</div>
-<br>
+
+
+    <main class="mt-4">
+      <section>
+        <div class="container">
+          <h2 class="mb-4">Productos</h2>
+
+          <div class="row gy-4">
+
+            <!-- FRUTAS -->
+            <div class="col-12 col-md-4">
+              <div class="card producto-card h-100">
+                <img src="img/frutas.png" class="card-img-top" alt="frutas">
+                <div class="card-body">
+                  <p>🍎 ¡Frescura Natural al Mejor Precio! 🍌<br>
+                  Disfruta de una explosión de sabor y vitaminas con nuestras frutas 100% frescas.</p>
+                </div>
               </div>
             </div>
-           </div> 
-        </section>
-        <br>
+
+            <!-- VERDURAS -->
+            <div class="col-12 col-md-4">
+              <div class="card producto-card h-100">
+                <img src="img/verduras.png" class="card-img-top" alt="verduras">
+                <div class="card-body">
+                  <p>🥦 ¡Verde que te quiero verde! 🥕<br>
+                  Llévate la frescura del campo directo a tu mesa con nuestras verduras 100% naturales y recién cosechadas.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- PROTEÍNAS -->
+            <div class="col-12 col-md-4">
+              <div class="card producto-card h-100">
+                <img src="img/proteinas.png" class="card-img-top" alt="proteinas">
+                <div class="card-body">
+                  <p>🥩 ¡Energía y sabor en cada bocado! 🐟<br>
+                  Descubre nuestras proteínas frescas y de la mejor calidad, ideales para fortalecer tu cuerpo y mantener una dieta balanceada.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- GRANOS -->
+            <div class="col-12 col-md-4">
+              <div class="card producto-card h-100">
+                <img src="img/granos.png" class="card-img-top" alt="granos">
+                <div class="card-body">
+                  <p>🌾 ¡Nutrición que se siente! 🌽<br>
+                  Disfruta de la mejor selección de granos naturales, llenos de sabor y energía para tus comidas diarias</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FRUTOS SECOS -->
+            <div class="col-12 col-md-4">
+              <div class="card producto-card h-100">
+                <img src="img/frutos secos.png" class="card-img-top" alt="frutos secos">
+                <div class="card-body">
+                  <p>🌰 ¡Energía que alimenta tu día!<br>
+                  Disfruta de la mezcla perfecta de sabor, textura y nutrición con nuestros frutos secos 100% naturales: nueces, almendras, maní, avellanas y más.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
     </main>
 
-<footer class="footer">
-  <div class="footer-container">
-    <div class="footer-logo-desc">
-      <img src="img/logo.jpg" alt="Chia Mercado Saludable" class="footer-logo" />
-      <p class="footer-description">
-        Productos orgánicos y naturales para cuidar de ti y del planeta.
-      </p>
-    </div>
-    <nav class="footer-nav">
-      <h4>Navegación</h4>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="empresa.html">Empresa</a></li>
-        <li><a href="productos.html">Productos</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-    <div class="footer-contact">
-      <h4>Contáctanos</h4>
-      <p>Email: </p>
-      <p>Teléfono: +57 312 2475108</p>
-      <p>Redes: </p>
-      <div class="footer-socials">
-        <a class="links" href="https://www.instagram.com/chiamercadosaludables/" target="_blank"><img src="img/instagram.png" alt="Instagram" /></a>
-        <a class="links" href="#"><img src="img/facebook.png" alt="Facebook" /></a>
-        <a class="links" href="#"><img src="img/whatsapp.png" alt="WhatsApp" /></a>
-      </div>
-    </div>
-  </div>
-  <div class="footer-legal">
-    &copy; 2025 Chia Mercado Saludable. Todos los derechos reservados.
-  </div>
-</footer>
 
+    <!-- FOOTER -->
+    <footer class="footer mt-5 text-white pt-4 pb-2">
+      <div class="container">
+        <div class="row gy-4 align-items-center text-center text-md-start">
+
+          <div class="col-12 col-md-4">
+            <img class="logo" src="img/logo.jpg" alt="logo" width="70" style="border-radius:40px;">
+            <p>Productos orgánicos y naturales para cuidar de ti y del planeta.</p>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <h4>Navegación</h4>
+            <ul class="list-unstyled">
+              <li><a href="index.html" class="text-white-2">Inicio</a></li>
+              <li><a href="empresa.html" class="text-white-2">Empresa</a></li>
+              <li><a href="productos.html" class="text-white-2">Productos</a></li>
+              <li><a href="contacto.html" class="text-white-2">Contacto</a></li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <h4>Contáctanos</h4>
+            <p>Teléfono: +57 323 9394833</p>
+            <div>
+              <a href="https://www.instagram.com/chiamercadosaludables/" target="_blank"><img src="img/instagram.png" width="30"></a>
+              <a href="#"><img src="img/facebook.png" width="30"></a>
+              <a href="https://wa.link/wmfbgl" target="_blank"><img src="img/whatsapp.png" width="30"></a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="text-center mt-4">
+          &copy; 2025 Chia Mercado Saludable. Todos los derechos reservados.
+        </div>
+      </div>
+    </footer>
+
+    <button id="btn-up"><img src="img/flecha_arriba.png" alt="flecha" width="50"></button>
+
+    <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   </body>
 </html>

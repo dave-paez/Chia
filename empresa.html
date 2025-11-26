@@ -5,132 +5,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Chía</title>
     <link rel="icon" href="img/icono.jpg">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"> 
   </head>
+
   <body>
-    <header class="p-3 text-bg-dark">
-        <div class="container">
-          <div
-            class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
-          >
-          <img class="logo" src="img/logo.jpg" alt="logo" width="80px">
-            <a
-              href="/"
-              class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
-            >
-            </a>
-            <ul
-              class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
-            >
+
+    <!-- HEADER -->
+    <header class="p-3">
+      <div class="container">
+        <div class="d-flex align-items-center justify-content-between">
+
+          <img class="logo" src="img/logo.jpg" alt="logo" width="70" style="border-radius:40px;">
+
+          <button class="navbar-toggler d-lg-none bg-light px-2 py-1" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#mobileMenu">
+            ☰
+          </button>
+
+          <nav class="collapse d-lg-flex justify-content-end w-100 w-lg-auto mt-3 mt-lg-0" id="mobileMenu">
+            <ul class="nav ms-lg-4 flex-column flex-lg-row text-center">
               <li><a href="index.html" class="nav-link px-2 text-secondary">INICIO</a></li>
               <li><a href="empresa.html" class="nav-link px-2 text-white">EMPRESA</a></li>
               <li><a href="preguntas-frecuentes-chia.html" class="nav-link px-2 text-white">PREGUNTAS FRECUENTES</a></li>
               <li><a href="productos.html" class="nav-link px-2 text-white">PRODUCTOS</a></li>
               <li><a href="contacto.html" class="nav-link px-2 text-white">CONTÁCTANOS</a></li>
             </ul>
-          </div>
+          </nav>
+
         </div>
+      </div>
     </header>
-    <br>
-    <main>
-        <section>
-        <div class="container">
-            <h2>Historia</h2>
-            <div class="row">
-              <div class="col-5">
-                <h4>La empresa nace como un emprendimiento en pareja, impulsado por el deseo de ofrecer productos de calidad y un servicio cercano. Nuestro objetivo es atender un mercado en constante crecimiento, que en el municipio de Copacabana aún cuenta con pocos oferentes. Vimos en esta necesidad una oportunidad para aportar soluciones innovadoras, accesibles y confiables, construyendo así un proyecto que combina nuestro compromiso, pasión y visión de futuro.</h4>
-              </div>
-              <div class="col-7">
-                <img src="img/logo-historia.png" alt="historia" width="520">
-              </div>
-            </div>
-        </div>
-        </section>
-        <br>
-        <section>
-            <div class="container">
-            <h2>Misión</h2>
-            <div class="row">
-              <div class="col-6">
-                <img class="mision" src="img/mision.png" alt="mision" width="460">
-              </div>
-              <div class="col-6">
-                <h4>En chía trabajamos cada día para ofrecer una alimentación orgánica y saludable, garantizando la máxima calidad en nuestros productos y un servicio al cliente excepcional; promoviendo el respeto por nuestros colaboradores, el compromiso con el medio ambiente y una colaboración transparente y responsable con nuestros proveedores contribuyendo así al bienestar integral de nuestra comunidad.</h4>
-              </div>
-            </div>
+
+    <main class="mt-4">
+
+      <!-- Historia -->
+      <section class="container mb-5">
+        <h2>Historia</h2>
+        <div class="row align-items-center g-4">
+          <div class="col-12 col-md-5">
+            <h4>
+              La empresa nace como un emprendimiento en pareja, impulsado por el deseo de ofrecer productos de calidad y un servicio cercano. Nuestro objetivo es atender un mercado en constante crecimiento, que en el municipio de Copacabana aún cuenta con pocos oferentes. Vimos en esta necesidad una oportunidad para aportar soluciones innovadoras, accesibles y confiables, construyendo así un proyecto que combina nuestro compromiso, pasión y visión de futuro.
+            </h4>
           </div>
-        </section>
-        <br>
-        <section>
-            <div class="container">
-            <h2>Visión</h2>
-            <div class="row">
-              <div class="col-4">
-                <h4>Ser reconocidos como un referente en alimentación orgánica y saludable, promoviendo un estilo de vida consciente y sostenible. Aspiramos a convertirnos en la opción preferida de quienes buscan productos naturales, nutritivos y responsables con el medio ambiente.</h4>
-              </div>
-              <div class="col-8">
-                <img src="img/vision.png" alt="vision" width="400">
-              </div>
-            </div>
-        </div>
-        </section>
-        <br>
-        <section>
-          <div class="container">
-            <h2>Valores</h2>
-            <div class="row">
-              <div class="col">
-                <img src="img/valores.png" alt="valores" width="540">
-              </div>
-              <div class="col">
-                <ul>
-                <h4><strong>Cuidado: </strong>Trabajamos con dedicación para ofrecer productos seguros y de calidad.</h4> <br>
-                <h4><strong>Servicio: </strong>Brindamos atención cercana, amable y oportuna.</h4> <br>
-                <h4><strong>Disponibilidad: </strong>Estamos presentes cuando nuestros clientes nos necesitan, con respuesta ágil.</h4> <br>
-                <h4><strong>Respeto: </strong>Valoramos a las personas y al entorno, actuando con integridad y responsabilidad.</h4>
-                </ul>
-              </div>
-            </div>
+          <div class="col-12 col-md-7 text-center">
+            <img src="img/logo-historia.png" alt="historia" class="img-fluid">
           </div>
-        </section>
-        <br>
+        </div>
+      </section>
+
+      <!-- Misión -->
+      <section class="container mb-5">
+        <h2>Misión</h2>
+        <div class="row align-items-center g-4">
+          <div class="col-12 col-md-6 text-center">
+            <img src="img/mision.png" alt="mision" class="img-fluid">
+          </div>
+          <div class="col-12 col-md-6">
+            <h4>
+              En chía trabajamos cada día para ofrecer una alimentación orgánica y saludable, garantizando la máxima calidad en nuestros productos y un servicio al cliente excepcional; promoviendo el respeto por nuestros colaboradores, el compromiso con el medio ambiente y una colaboración transparente y responsable con nuestros proveedores contribuyendo así al bienestar integral de nuestra comunidad.
+            </h4>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visión -->
+      <section class="container mb-5">
+        <h2>Visión</h2>
+        <div class="row align-items-center g-4">
+          <div class="col-12 col-md-4">
+            <h4>
+              er reconocidos como un referente en alimentación orgánica y saludable, promoviendo un estilo de vida consciente y sostenible. Aspiramos a convertirnos en la opción preferida de quienes buscan productos naturales, nutritivos y responsables con el medio ambiente.
+            </h4>
+          </div>
+          <div class="col-12 col-md-8 text-center">
+            <img src="img/vision.png" alt="vision" class="img-fluid">
+          </div>
+        </div>
+      </section>
+
+      <!-- Valores -->
+      <section class="container mb-5">
+        <h2>Valores</h2>
+        <div class="row g-4">
+          <div class="col-12 col-md-6 text-center">
+            <img src="img/valores.png" alt="valores" class="img-fluid">
+          </div>
+          <div class="col-12 col-md-6">
+            <h4><strong>Cuidado:</strong> Trabajamos con dedicación para ofrecer productos seguros y de calidad.</h4>
+            <h4><strong>Servicio:</strong> Brindamos atención cercana, amable y oportuna.</h4>
+            <h4><strong>Disponibilidad:</strong> Estamos presentes cuando nuestros clientes nos necesitan, con respuesta ágil.</h4>
+            <h4><strong>Respeto:</strong> Valoramos a las personas y al entorno, actuando con integridad y responsabilidad.</h4>
+          </div>
+        </div>
+      </section>
+
     </main>
 
-<footer class="footer">
-  <div class="footer-container">
-    <div class="footer-logo-desc">
-      <img src="img/logo.jpg" alt="Chia Mercado Saludable" class="footer-logo" />
-      <p class="footer-description">
-        Productos orgánicos y naturales para cuidar de ti y del planeta.
-      </p>
-    </div>
-    <nav class="footer-nav">
-      <h4>Navegación</h4>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="empresa.html">Empresa</a></li>
-        <li><a href="productos.html">Productos</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
-    <div class="footer-contact">
-      <h4>Contáctanos</h4>
-      <p>Email: </p>
-      <p>Teléfono: +57 312 2475108</p>
-      <p>Redes: </p>
-      <div class="footer-socials">
-        <a class="links" href="https://www.instagram.com/chiamercadosaludables/" target="_blank"><img src="img/instagram.png" alt="Instagram" /></a>
-        <a class="links" href="#"><img src="img/facebook.png" alt="Facebook" /></a>
-        <a class="links" href="#"><img src="img/whatsapp.png" alt="WhatsApp" /></a>
-      </div>
-    </div>
-  </div>
-  <div class="footer-legal">
-    &copy; 2025 Chia Mercado Saludable. Todos los derechos reservados.
-  </div>
-</footer>
+    <!-- FOOTER -->
+    <footer class="footer mt-5 text-white pt-4 pb-2">
+      <div class="container">
+        <div class="row gy-4 align-items-center text-center text-md-start">
 
+          <div class="col-12 col-md-4">
+            <img class="logo" src="img/logo.jpg" alt="logo" width="70" style="border-radius:40px;">
+            <p>Productos orgánicos y naturales para cuidar de ti y del planeta.</p>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <h4>Navegación</h4>
+            <ul class="list-unstyled">
+              <li><a href="index.html" class="text-white-2">Inicio</a></li>
+              <li><a href="empresa.html" class="text-white-2">Empresa</a></li>
+              <li><a href="productos.html" class="text-white-2">Productos</a></li>
+              <li><a href="contacto.html" class="text-white-2">Contacto</a></li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <h4>Contáctanos</h4>
+            <p>Teléfono: +57 323 9394833</p>
+            <div>
+              <a href="https://www.instagram.com/chiamercadosaludables/" target="_blank"><img src="img/instagram.png" width="30"></a>
+              <a href="#"><img src="img/facebook.png" width="30"></a>
+              <a href="https://wa.link/wmfbgl" target="_blank"><img src="img/whatsapp.png" width="30"></a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="text-center mt-4">
+          &copy; 2025 Chia Mercado Saludable. Todos los derechos reservados.
+        </div>
+      </div>
+    </footer>
+
+    <button id="btn-up"><img src="img/flecha_arriba.png" alt="flecha" width="50"></button>
+
+    <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   </body>
 </html>
