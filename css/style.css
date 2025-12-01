@@ -5,9 +5,113 @@ body {
   overflow-x: hidden;
 }
 
+/* ========================================
+   ANIMACIÓN DE CARGA ENTRE PÁGINAS
+   ======================================== */
+#page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #75605B 0%, #5a4843 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+#page-loader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader-content {
+  text-align: center;
+  color: white;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-top: 5px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loader-text {
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* Fade in al cargar página */
+body.page-loaded {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 h2 {
   font-weight: 700;
   margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+/* Línea animada debajo de h2 */
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #75605B, transparent);
+  transition: width 0.8s ease;
+}
+
+h2.animate-in::after {
+  width: 60px;
+}
+
+/* Quitar línea en h2 con clase .no-line */
+h2.no-line::after {
+  display: none !important;
+}
+
+h2.no-line {
+  padding-bottom: 0 !important;
+}
+
+/* También quitar líneas de los botones del accordion */
+.accordion-button::after,
+.accordion-header h2::after,
+.accordion-item h2::after,
+.accordion h2::after {
+  display: none !important;
+  content: none !important;
+}
+
+.accordion-header h2,
+.accordion-item h2 {
+  padding-bottom: 0 !important;
 }
 
 h4 {
@@ -17,19 +121,45 @@ h4 {
 /* HEADER */
 header {
   background-color: #75605B !important;
-   position: sticky;
+  position: sticky;
   top: 0;
   z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
 .logo {
   border-radius: 40px;
+  transition: transform 0.5s ease;
+}
+
+.logo:hover {
+  transform: rotate(360deg) scale(1.1);
+}
+
+/* Animación de entrada del logo */
+@keyframes logoEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.logo.animate-logo {
+  animation: logoEntrance 1s ease-out;
 }
 
 /* Menú móvil */
 #mobileMenu a {
   font-size: 1.1rem;
   padding: 10px 0;
+  transition: color 0.3s ease;
 }
 
 /* Hover de enlaces */
@@ -46,6 +176,8 @@ header {
 .carousel-item img {
   object-fit: cover;
   height: 300px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
 
 @media (min-width: 768px) {
@@ -60,16 +192,33 @@ header {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0px 3px 10px rgba(0,0,0,0.15);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: all 0.6s ease !important;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 6px 20px rgba(0,0,0,0.25);
+  transform: translateY(-10px) scale(1.03) !important;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.3);
 }
 
 .card img {
   object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+/* Texto de tarjetas */
+.card .card-text,
+.card p {
+  transition: all 0.6s ease;
+}
+
+.card .card-text.animate-in,
+.card p.animate-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 .gy-4{
@@ -84,6 +233,7 @@ header {
 /* MAPA */
 iframe {
   border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .col-md-8{
@@ -142,6 +292,13 @@ footer img {
   footer .col-12 {
     text-align: center !important;
   }
+  
+  #btn-up {
+    width: 50px !important;
+    height: 50px !important;
+    bottom: 20px;
+    right: 20px;
+  }
 }
 
 /* --- FORMULARIO --- */
@@ -156,6 +313,14 @@ footer img {
   margin-bottom: 12px;
   border: 1px solid #ccc;
   border-radius: 6px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-form input:focus,
+.custom-form textarea:focus {
+  outline: none;
+  border-color: #75605B;
+  box-shadow: 0 0 8px rgba(117, 96, 91, 0.3);
 }
 
 .form-row {
@@ -176,38 +341,57 @@ textarea {
   font-weight: bold;
   border: none;
   border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn-enviar:hover {
   background-color: #218838;
+  transform: translateY(-2px);
 }
 
-/* javaScript */
+/* ========================================
+   ANIMACIONES JAVASCRIPT
+   ======================================== */
 
 /* Botón volver arriba */
 #btn-up {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 45px;
-  height: 45px;
-  background-color: #75605B;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #75605B, #5a4843);
   color: white;
   border: none;
   border-radius: 50%;
   cursor: pointer;
   font-size: 20px;
-  display: none; 
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
   justify-content: center;
   align-items: center;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
   z-index: 999;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+#btn-up.show {
+  opacity: 1;
+  visibility: visible;
 }
 
 #btn-up:hover {
-  background-color: #555;
+  background: linear-gradient(135deg, #5a4843, #75605B);
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 6px 20px rgba(117, 96, 91, 0.5);
 }
 
+#btn-up img {
+  filter: brightness(0) invert(1);
+}
+
+/* Carrusel fade */
 .carousel-item {
   transition: opacity 1.2s ease-in-out;
 }
@@ -219,4 +403,64 @@ textarea {
 
 .carousel-fade .carousel-item.active {
   opacity: 1;
+}
+
+/* ========================================
+   SISTEMA DE ANIMACIONES AL SCROLL
+   ======================================== */
+
+/* Clase para elementos que se van a animar */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+.fade-in-scale {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+/* Clase que se agrega cuando el elemento entra en pantalla */
+.animate-in {
+  opacity: 1 !important;
+  transform: translate(0, 0) scale(1) !important;
+  transition: all 0.8s ease;
+}
+
+/* Efecto de desaparición hacia arriba (empresa.html) */
+.fade-out-up {
+  opacity: 0 !important;
+  transform: translateY(-100px) !important;
+  transition: all 0.7s ease;
+  pointer-events: none;
+}
+
+/* Efecto de desaparición hacia abajo (empresa.html) */
+.fade-out-down {
+  opacity: 0 !important;
+  transform: translateY(100px) !important;
+  transition: all 0.7s ease;
+  pointer-events: none;
+}
+
+/* Accordion animado */
+.accordion-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.accordion-item.animate-in {
+  opacity: 1;
+  transform: translateY(0);
 }
