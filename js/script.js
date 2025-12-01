@@ -66,7 +66,7 @@ if (btnUp) {
   function smoothScrollUp() {
     const current = window.scrollY;
     if (current > 0) {
-      window.scrollBy(0, -60);
+      window.scrollBy(0, -30);
       requestAnimationFrame(smoothScrollUp);
     }
   }
@@ -83,7 +83,7 @@ if (btnUp) {
 // ========================================
 const myCarousel = document.querySelector('#carouselExampleDark');
 
-if (myCarousel) {
+if (myCarousel && typeof bootstrap !== 'undefined') {
   const carousel = new bootstrap.Carousel(myCarousel, {
     interval: 3000,
     ride: 'carousel',
@@ -122,32 +122,45 @@ function animateOnScroll() {
   });
   
   // ========================================
-  // EFECTO ESPECIAL PARA EMPRESA.HTML
-  // Aparecer y desaparecer secciones dinámicamente
+  // EFECTO DE APARECER/DESAPARECER SECCIONES
+  // Para empresa.html, index.html y otras páginas
   // ========================================
-  if (window.location.pathname.includes('empresa.html')) {
-    const sections = document.querySelectorAll('main section');
+  const sections = document.querySelectorAll('main section');
+  
+  sections.forEach((section) => {
+    const rect = section.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
     
-    sections.forEach((section) => {
-      const rect = section.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      
-      // Si la sección está en el viewport - APARECER
-      if (rect.top < windowHeight - 100 && rect.bottom > 100) {
-        section.classList.add('animate-in');
-        section.classList.remove('fade-out-up', 'fade-out-down');
-      }
-      // Si la sección está arriba fuera del viewport - DESAPARECER ARRIBA
-      else if (rect.bottom < 0) {
-        section.classList.remove('animate-in');
-        section.classList.add('fade-out-up');
-      }
-      // Si la sección está abajo fuera del viewport - DESAPARECER ABAJO
-      else if (rect.top > windowHeight) {
-        section.classList.remove('animate-in');
-        section.classList.add('fade-out-down');
-      }
-    });
+    // Si la sección está en el viewport - APARECER
+    if (rect.top < windowHeight - 100 && rect.bottom > 100) {
+      section.classList.add('animate-in');
+      section.classList.remove('fade-out-up', 'fade-out-down');
+    }
+    // Si la sección está arriba fuera del viewport - DESAPARECER ARRIBA
+    else if (rect.bottom < 0) {
+      section.classList.remove('animate-in');
+      section.classList.add('fade-out-up');
+    }
+    // Si la sección está abajo fuera del viewport - DESAPARECER ABAJO
+    else if (rect.top > windowHeight) {
+      section.classList.remove('animate-in');
+      section.classList.add('fade-out-down');
+    }
+  });
+  
+  // También aplicar al footer
+  const footer = document.querySelector('footer');
+  if (footer) {
+    const rect = footer.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    
+    if (rect.top < windowHeight - 100 && rect.bottom > 100) {
+      footer.classList.add('animate-in');
+      footer.classList.remove('fade-out-down');
+    } else if (rect.top > windowHeight) {
+      footer.classList.remove('animate-in');
+      footer.classList.add('fade-out-down');
+    }
   }
   
   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
@@ -171,10 +184,13 @@ window.addEventListener('scroll', () => {
 // ========================================
 window.addEventListener('load', () => {
   
+  console.log('🎬 Iniciando configuración de animaciones...');
+  
   // ========================================
   // ANIMAR LOGO
   // ========================================
   const logos = document.querySelectorAll('header .logo');
+  console.log('Logos encontrados:', logos.length);
   logos.forEach(logo => {
     logo.classList.add('animate-logo');
   });
@@ -184,9 +200,9 @@ window.addEventListener('load', () => {
   // TARJETAS DE PRODUCTOS (MISMO EFECTO EN TODAS LAS PÁGINAS)
   // ========================================
   const cards = document.querySelectorAll('.card');
+  console.log('Tarjetas encontradas:', cards.length);
   cards.forEach((card, index) => {
     card.classList.add('fade-in-up');
-    card.style.transitionDelay = `${index * 0.2}s`;
     card.style.opacity = '0';
     card.style.transform = 'translateY(50px)';
     
@@ -205,9 +221,11 @@ window.addEventListener('load', () => {
   // TÍTULOS H2
   // ========================================
   const titles = document.querySelectorAll('main h2, section h2');
+  console.log('Títulos h2 encontrados:', titles.length);
   titles.forEach((title, index) => {
     title.classList.add('fade-in-left');
-    title.style.transitionDelay = `${index * 0.1}s`;
+    title.style.opacity = '0';
+    title.style.transform = 'translateX(-50px)';
   });
 
   
@@ -215,9 +233,11 @@ window.addEventListener('load', () => {
   // TEXTOS H4 (HISTORIA, MISIÓN, ETC)
   // ========================================
   const h4Texts = document.querySelectorAll('section h4');
+  console.log('Textos h4 encontrados:', h4Texts.length);
   h4Texts.forEach((h4, index) => {
     h4.classList.add('fade-in-left');
-    h4.style.transitionDelay = `${index * 0.1}s`;
+    h4.style.opacity = '0';
+    h4.style.transform = 'translateX(-30px)';
   });
 
   
@@ -225,9 +245,11 @@ window.addEventListener('load', () => {
   // IMÁGENES EN SECCIONES
   // ========================================
   const sectionImages = document.querySelectorAll('section img:not(.logo):not(.card-img-top)');
+  console.log('Imágenes de sección encontradas:', sectionImages.length);
   sectionImages.forEach((img, index) => {
     img.classList.add('fade-in-scale');
-    img.style.transitionDelay = `${0.2 + (index * 0.1)}s`;
+    img.style.opacity = '0';
+    img.style.transform = 'scale(0.9)';
   });
 
   
@@ -235,9 +257,11 @@ window.addEventListener('load', () => {
   // IFRAME DEL MAPA
   // ========================================
   const iframes = document.querySelectorAll('iframe');
+  console.log('Iframes encontrados:', iframes.length);
   iframes.forEach(iframe => {
     iframe.classList.add('fade-in-up');
-    iframe.style.transitionDelay = '0.2s';
+    iframe.style.opacity = '0';
+    iframe.style.transform = 'translateY(30px)';
   });
 
   
@@ -246,7 +270,10 @@ window.addEventListener('load', () => {
   // ========================================
   const formContainer = document.querySelector('.form-container');
   if (formContainer) {
+    console.log('Formulario encontrado');
     formContainer.classList.add('fade-in-right');
+    formContainer.style.opacity = '0';
+    formContainer.style.transform = 'translateX(50px)';
   }
 
   
@@ -254,18 +281,25 @@ window.addEventListener('load', () => {
   // ACCORDION (PREGUNTAS FRECUENTES)
   // ========================================
   const accordionItems = document.querySelectorAll('.accordion-item');
-  accordionItems.forEach((item, index) => {
-    item.style.transitionDelay = `${index * 0.1}s`;
-  });
+  if (accordionItems.length > 0) {
+    console.log('Items de accordion encontrados:', accordionItems.length);
+    accordionItems.forEach((item, index) => {
+      item.style.transitionDelay = `${index * 0.1}s`;
+    });
+  }
 
   
   // ========================================
   // TODAS LAS SECCIONES (PARA INDEX Y OTRAS PÁGINAS)
   // ========================================
   const allSections = document.querySelectorAll('main section');
+  console.log('Secciones encontradas:', allSections.length);
+  console.log('Ruta actual:', window.location.pathname);
+  
   allSections.forEach((section, index) => {
     // Solo agregar si no está en empresa.html (que tiene animación especial)
     if (!window.location.pathname.includes('empresa.html')) {
+      console.log('Configurando sección', index);
       section.classList.add('fade-in-up');
       section.style.opacity = '0';
       section.style.transform = 'translateY(50px)';
@@ -279,6 +313,7 @@ window.addEventListener('load', () => {
   // ========================================
   const footer = document.querySelector('footer');
   if (footer) {
+    console.log('Footer encontrado');
     footer.classList.add('fade-in-up');
     footer.style.opacity = '0';
     footer.style.transform = 'translateY(50px)';
@@ -288,6 +323,7 @@ window.addEventListener('load', () => {
   
   // Ejecutar animaciones iniciales después de configurar
   setTimeout(() => {
+    console.log('🎯 Ejecutando animaciones...');
     animateOnScroll();
   }, 100);
 });
