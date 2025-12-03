@@ -66,7 +66,7 @@ if (btnUp) {
   function smoothScrollUp() {
     const current = window.scrollY;
     if (current > 0) {
-      window.scrollBy(0, -80);
+      window.scrollBy(0, -120);
       requestAnimationFrame(smoothScrollUp);
     }
   }

@@ -458,9 +458,96 @@ textarea {
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.5s ease;
+  margin-bottom: 15px;
+  border: none !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .accordion-item.animate-in {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Botón del accordion */
+.accordion-button {
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 18px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.accordion-button:not(.collapsed) {
+  background: linear-gradient(135deg, #75605B 0%, #5a4843 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(117, 96, 91, 0.3);
+}
+
+.accordion-button:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: transparent;
+}
+
+/* Icono del accordion animado */
+.accordion-button::after {
+  transition: transform 0.3s ease;
+}
+
+.accordion-button:not(.collapsed)::after {
+  transform: rotate(180deg);
+}
+
+/* Contenido del accordion */
+.accordion-body {
+  padding: 20px;
+  background: white;
+  font-size: 1rem;
+  line-height: 1.7;
+  animation: fadeInContent 0.4s ease;
+}
+
+@keyframes fadeInContent {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efecto de onda al hacer clic */
+.accordion-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.accordion-button:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Hover en items colapsados */
+.accordion-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
